@@ -12,8 +12,8 @@ export default function Footer() {
               <Image
                 src="/l2.png"
                 alt="Aquelious Industries"
-                width={220}
-                height={60}
+                width={240}
+                height={50}
                 priority
               />
             </a>
