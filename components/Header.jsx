@@ -1,6 +1,7 @@
- "use client";
+"use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -9,44 +10,65 @@ export default function Header() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const links = [
-    ["#problem", "Platform"],
-    ["#workflow", "Technology"],
-    ["#features", "AquaNode"],
-    ["#dashboard", "NeerGrid"],
-    ["#validation", "Researchn"],
-    ["#roadmap", "Roadmap"],
+    ["/about", "About Us"],
+    ["/technology", "Technology"],
+    ["/industries", "Industries"],
+    ["/solutions", "Solutions"],
+    ["/research", "Research"],
+    ["/contact", "Contact"],
   ];
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <div className="container nav">
-        <a className="brand" href="#top" aria-label="Aquelious home">
-          
-          <img width={240} height={50} src="/l2.png" alt="" />
-        </a>
+        <Link className="brand" href="/" aria-label="Aquelious home">
+          <img width={240} height={50} src="/l2.png" alt="Aquelious Industries" />
+        </Link>
 
         <nav className="navlinks">
-          {links.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
+          {links.map(([href, label]) => (
+            <Link key={href} href={href}>
+              {label}
+            </Link>
+          ))}
         </nav>
 
-        <a className="nav-cta" href="#contact">Pilot with us</a>
+        <Link className="nav-cta" href="/contact">
+          Pilot with us
+        </Link>
 
-        <button className="hamburger" onClick={() => setOpen(!open)} aria-label="Open menu">
-          <i /><i /><i />
+        <button
+          className="hamburger"
+          onClick={() => setOpen(!open)}
+          aria-label="Open menu"
+        >
+          <i />
+          <i />
+          <i />
         </button>
       </div>
 
       <div className={`mobile ${open ? "open" : ""}`}>
         <div className="container">
           {links.map(([href, label]) => (
-            <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+            >
+              {label}
+            </Link>
           ))}
-          <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+
+          <Link href="/contact" onClick={() => setOpen(false)}>
+            Contact
+          </Link>
         </div>
       </div>
     </header>
