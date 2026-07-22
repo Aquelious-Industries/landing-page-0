@@ -18,7 +18,7 @@ export default function Header() {
     ["#workflow", "Technology"],
     ["#features", "AquaNode"],
     ["#dashboard", "NeerGrid"],
-    ["#validation", "Research"],
+    ["#validation", "Researchn"],
     ["#roadmap", "Roadmap"],
   ];
 
