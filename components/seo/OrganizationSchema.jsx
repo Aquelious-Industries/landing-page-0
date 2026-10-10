@@ -7,7 +7,7 @@ export default function OrganizationSchema() {
 
     url: "https://www.aquelious.com",
 
-    logo: "https://www.aquelious.com/logo.png",
+    logo: "https://www.aquelious.com/l2.png",
 
     image: "https://www.aquelious.com/og-image.png",
 

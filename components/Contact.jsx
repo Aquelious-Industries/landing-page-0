@@ -4,48 +4,46 @@ import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 
 export default function Contact() {
-  const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-
     setLoading(true);
-    setStatus("");
 
     const form = e.currentTarget;
 
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      company: form.company.value,
-      phone: form.phone.value,
-      message: form.message.value,
-    };
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const company = form.company.value.trim();
+    const phone = form.phone.value.trim();
+    const message = form.message.value.trim();
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    const subject = `Website Inquiry from ${name}`;
 
-      const json = await res.json();
+    const body = `
+Hello Aquelious Team,
 
-      if (!res.ok) {
-        throw new Error(json.message || "Failed to send message.");
-      }
+I would like to get in touch with Aquelious Industries.
 
-      setStatus("✅ Thank you! Your message has been sent successfully.");
+Name: ${name}
+Email: ${email}
+Company / Organization: ${company || "Not provided"}
+Phone: ${phone || "Not provided"}
 
-      form.reset();
-    } catch (err) {
-      setStatus(err.message || "Something went wrong.");
-    } finally {
-      setLoading(false);
-    }
+Message:
+${message}
+
+---
+This message was submitted through the Aquelious website.
+    `.trim();
+
+    const mailto = `mailto:contact@aquelious.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+
+    setLoading(false);
   }
 
   return (
@@ -109,6 +107,7 @@ export default function Contact() {
             <input
               id="phone"
               name="phone"
+              type="tel"
               placeholder="+91 9876543210"
             />
 
@@ -137,19 +136,8 @@ export default function Contact() {
               disabled={loading}
               type="submit"
             >
-              {loading ? "Sending..." : "Send Message →"}
+              {loading ? "Opening Mail..." : "Send Message →"}
             </button>
-
-            {status && (
-              <p
-                className="form-status"
-                style={{
-                  marginTop: "18px",
-                }}
-              >
-                {status}
-              </p>
-            )}
           </form>
         </Reveal>
       </div>

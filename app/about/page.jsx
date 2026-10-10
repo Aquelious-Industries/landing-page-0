@@ -34,7 +34,7 @@ const technologies = [
   {
     title: "Connected Infrastructure",
     description:
-      "Scalable IoT architecture designed for future-ready water ecosystems.",
+      "Scalable architecture designed for future-ready water ecosystems.",
   },
 ];
 
@@ -99,7 +99,7 @@ export default function AboutPage() {
             </p>
 
             <p>
-              Aquelious Industries combines IoT, artificial intelligence,
+              Aquelious Industries combines artificial intelligence,
               telemetry, and predictive analytics to transform raw environmental
               data into operational intelligence for aquaculture, fisheries, and
               industrial water systems.
