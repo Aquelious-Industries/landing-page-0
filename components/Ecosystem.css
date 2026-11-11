@@ -1,0 +1,203 @@
+
+/* =========================================
+   ECOSYSTEM SECTION
+========================================= */
+
+.ecosystem-section {
+  width: 100%;
+  padding: 145px 0 105px;
+  background: #f1f9fc;
+  color: #10243a;
+  overflow: hidden;
+}
+
+.ecosystem-container {
+  width: 89%;
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.ecosystem-header h2 {
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+  font-weight: 780;
+  color: #10243a;
+  margin: 0;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.ecosystem-content {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  margin-top: 55px;
+}
+
+/* =========================================
+   PARTNER GROUPS
+========================================= */
+
+.partner-group {
+  width: 100%;
+  min-width: 0;
+}
+
+.partner-group h3 {
+  font-size: 27px;
+  font-weight: 650;
+  letter-spacing: -0.8px;
+  color: #10243a;
+  margin: 0 0 28px;
+}
+
+/* =========================================
+   LOGO GRID
+========================================= */
+
+.partner-logos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+}
+
+/* =========================================
+   LOGO CONTAINER
+========================================= */
+
+.partner-logo {
+  width: 100%;
+  min-width: 0;
+  height: 155px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+  box-sizing: border-box;
+
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  transition: border-color 0.3s ease;
+}
+
+.partner-logo:hover {
+  border-color: #c9dfeb;
+}
+
+/* Actual logos */
+
+.partner-logo img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 250px;
+  max-height: 110px;
+
+  object-fit: contain;
+  object-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.partner-logo:hover img {
+  transform: scale(1.04);
+}
+
+/* Empty spaces */
+
+.logo-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .ecosystem-container {
+    width: 92%;
+  }
+
+  .partner-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .partner-logo {
+    height: 145px;
+  }
+
+  .ecosystem-content {
+    gap: 55px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+  .ecosystem-section {
+    padding: 115px 0 75px;
+  }
+
+  .ecosystem-container {
+    width: 88%;
+  }
+
+  .ecosystem-header h2 {
+    font-size: 38px;
+    letter-spacing: -1.8px;
+  }
+
+  .ecosystem-content {
+    margin-top: 40px;
+    gap: 42px;
+  }
+
+  .partner-group h3 {
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
+
+  .partner-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .partner-logo {
+    height: 115px;
+    padding: 12px;
+  }
+
+  .partner-logo img {
+    max-height: 85px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-logo,
+  .partner-logo img {
+    transition: none;
+  }
+}

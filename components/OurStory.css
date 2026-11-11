@@ -1,0 +1,217 @@
+
+.our-story {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f1f9fc;
+  padding: 90px 0 00px;
+  color: #0b192a;
+}
+
+.story-container {
+  width: 89%;
+  max-width: 1540px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Water wave */
+
+.story-wave {
+  position: absolute;
+  top: 30px;
+  right: -20px;
+  width: 55%;
+  height: 350px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.story-wave img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+}
+
+/* Introduction */
+
+.story-intro {
+  max-width: 750px;
+  position: relative;
+  z-index: 2;
+}
+
+.story-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.story-line {
+  width: 88px;
+  height: 1px;
+  background: #8aafc4;
+}
+
+.story-intro h2 {
+  font-size: clamp(48px, 5vw, 70px);
+  font-weight: 800;
+  letter-spacing: -3.5px;
+  line-height: 1.05;
+  margin: 0 0 20px;
+}
+
+.story-intro p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #596d7b;
+  max-width: 750px;
+  margin: 0;
+}
+
+/* Main story content */
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1.7fr 1px 1fr;
+  align-items: center;
+  gap: 65px;
+  margin-top: 105px;
+}
+
+/* Aquaculture image */
+
+.story-image {
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.story-image:hover img {
+  transform: scale(1.035);
+}
+
+/* Divider */
+
+.story-divider {
+  width: 1px;
+  height: 100%;
+  min-height: 250px;
+  background: #d1e4ee;
+}
+
+/* Right side statement */
+
+.story-message {
+  max-width: 480px;
+}
+
+.story-message h3 {
+  font-size: clamp(32px, 3vw, 43px);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+  font-weight: 600;
+  margin: 0;
+  color: #10243a;
+}
+
+.story-message h3 span {
+  color: #0878ad;
+}
+
+.message-line {
+  width: 36px;
+  height: 2px;
+  background: #8aafc4;
+  margin: 28px 0;
+}
+
+.story-message p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #596d7b;
+  margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .our-story {
+    padding: 80px 0 60px;
+  }
+
+  .story-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 65px;
+  }
+
+  .story-divider {
+    display: none;
+  }
+
+  .story-image {
+    height: 300px;
+  }
+
+  .story-message {
+    max-width: 600px;
+  }
+
+  .story-wave {
+    width: 75%;
+    opacity: 0.65;
+  }
+}
+
+@media (max-width: 600px) {
+  .story-container {
+    width: 88%;
+  }
+
+  .story-intro h2 {
+    letter-spacing: -2px;
+  }
+
+  .story-intro p {
+    font-size: 16px;
+  }
+
+  .story-content {
+    margin-top: 50px;
+  }
+
+  .story-image {
+    height: 220px;
+    border-radius: 14px;
+  }
+
+  .story-message h3 {
+    font-size: 34px;
+  }
+
+  .story-message p {
+    font-size: 15px;
+  }
+
+  .story-wave {
+    top: 100px;
+    width: 100%;
+    opacity: 0.35;
+  }
+}

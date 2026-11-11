@@ -1,0 +1,450 @@
+
+/* =========================================
+   FIELDWORK SECTION
+========================================= */
+
+.fieldwork-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 105px 0 95px;
+  background: #f1f9fc;
+  color: #10243a;
+}
+
+.fieldwork-container {
+  width: 89%;
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   TOP CONTENT
+========================================= */
+
+.fieldwork-top {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr;
+  align-items: center;
+  gap: 65px;
+}
+
+/* Eyebrow */
+
+.fieldwork-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+
+  color: #176d9e;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.fieldwork-eyebrow-line {
+  width: 82px;
+  height: 1px;
+  background: #85b8d2;
+}
+
+/* Heading */
+
+.fieldwork-intro h2 {
+  max-width: 700px;
+  margin: 0 0 25px;
+
+  font-size: clamp(42px, 4.5vw, 66px);
+  line-height: 1.06;
+  letter-spacing: -3px;
+  font-weight: 780;
+  color: #10243a;
+}
+
+.fieldwork-intro h2 span {
+  display: block;
+  color: #0878b5;
+}
+
+.fieldwork-intro p {
+  max-width: 620px;
+  margin: 0;
+
+  color: #526c83;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   METRICS
+========================================= */
+
+.fieldwork-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+}
+
+.field-metric {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 0 14px;
+  min-width: 0;
+}
+
+.field-metric:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25px;
+  height: 115px;
+  width: 1px;
+  background: #c9e0ec;
+}
+
+/* Metric icon */
+
+.metric-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+  margin-bottom: 17px;
+
+  color: #0878b5;
+  background: #dceff8;
+  border-radius: 17px;
+}
+
+.metric-icon svg {
+  width: 31px;
+  height: 31px;
+}
+
+/* Metric numbers */
+
+.field-metric strong {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #105184;
+  font-size: clamp(28px, 3vw, 43px);
+  line-height: 1;
+  letter-spacing: -1.5px;
+  font-weight: 800;
+}
+
+.field-metric > span {
+  max-width: 130px;
+  color: #435f7c;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* =========================================
+   AUTO-SCROLLING PHOTO GALLERY
+========================================= */
+
+.fieldwork-gallery {
+  position: relative;
+  width: 100%;
+  margin-top: 75px;
+  overflow: hidden;
+
+  /* Soft edge fading */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+
+.field-carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.field-carousel-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 16px;
+
+  animation: fieldwork-scroll 45s linear infinite;
+  will-change: transform;
+}
+
+.fieldwork-gallery:hover .field-carousel-track {
+  animation-play-state: paused;
+}
+
+.field-photo {
+  position: relative;
+  flex: 0 0 215px;
+  width: 215px;
+  height: 145px;
+
+  overflow: hidden;
+  border-radius: 15px;
+  background: #dcecf4;
+}
+
+.field-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.field-photo:hover img {
+  transform: scale(1.06);
+}
+
+.field-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 25px 12px 10px;
+
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  background: linear-gradient(
+    transparent,
+    rgba(8, 32, 52, 0.65)
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.field-photo:hover .field-photo-caption {
+  opacity: 1;
+}
+
+@keyframes fieldwork-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+
+/* =========================================
+   BOTTOM QUOTE
+========================================= */
+
+.fieldwork-bottom {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  margin-top: 55px;
+  padding-top: 30px;
+  border-top: 1px solid #d6e8f0;
+}
+
+.fieldwork-quote-line {
+  align-self: stretch;
+  flex: 0 0 3px;
+  background: #1688c2;
+  border-radius: 5px;
+}
+
+.fieldwork-bottom p {
+  max-width: 620px;
+  margin: 0;
+
+  color: #233f5e;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.fieldwork-signature {
+  margin-left: auto;
+
+  color: #7b99ad;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .fieldwork-container {
+    width: 92%;
+  }
+
+  .fieldwork-top {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .fieldwork-intro {
+    max-width: 760px;
+  }
+
+  .fieldwork-metrics {
+    max-width: 850px;
+  }
+
+  .fieldwork-gallery {
+    margin-top: 55px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .fieldwork-section {
+    padding: 75px 0 65px;
+  }
+
+  .fieldwork-container {
+    width: 88%;
+  }
+
+  .fieldwork-eyebrow {
+    font-size: 12px;
+    margin-bottom: 23px;
+  }
+
+  .fieldwork-intro h2 {
+    font-size: clamp(39px, 10vw, 52px);
+    letter-spacing: -2px;
+  }
+
+  .fieldwork-intro p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .fieldwork-top {
+    gap: 38px;
+  }
+
+  .fieldwork-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 32px;
+  }
+
+  .field-metric:nth-child(2)::after {
+    display: none;
+  }
+
+  .field-metric:nth-child(3)::after {
+    display: block;
+  }
+
+  .field-metric {
+    padding: 0 10px;
+  }
+
+  .metric-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    margin-bottom: 13px;
+  }
+
+  .metric-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .field-metric strong {
+    font-size: 34px;
+  }
+
+  .field-metric > span {
+    font-size: 13px;
+  }
+
+  .fieldwork-gallery {
+    margin-top: 45px;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 3%,
+      black 97%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 3%,
+      black 97%,
+      transparent
+    );
+  }
+
+  .field-carousel-track {
+    gap: 12px;
+    animation-duration: 38s;
+  }
+
+  .field-photo {
+    flex-basis: 175px;
+    width: 175px;
+    height: 120px;
+    border-radius: 12px;
+  }
+
+  .fieldwork-bottom {
+    margin-top: 35px;
+    padding-top: 24px;
+    gap: 14px;
+  }
+
+  .fieldwork-bottom p {
+    font-size: 16px;
+  }
+
+  .fieldwork-signature {
+    display: none;
+  }
+}
+
+/* Respect reduced motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .field-carousel-track {
+    animation: none;
+  }
+
+  .field-photo img {
+    transition: none;
+  }
+}

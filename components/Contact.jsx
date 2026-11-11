@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
+import "./Contact.css";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -51,7 +52,7 @@ This message was submitted through the Aquelious website.
       <div className="container">
         <Reveal className="cta-card">
           <div>
-            <div className="kicker">Get in Touch</div>
+            
 
             <h2>
               Let's build the future of
@@ -71,13 +72,6 @@ This message was submitted through the Aquelious website.
               >
                 contact@aquelious.com →
               </a>
-
-              <a
-                className="btn secondary"
-                href="/about"
-              >
-                Learn More →
-              </a>
             </div>
           </div>
 
@@ -90,7 +84,7 @@ This message was submitted through the Aquelious website.
             <input
               id="name"
               name="name"
-              placeholder="John Smith"
+              placeholder="Ravi Sharma"
               required
             />
 
@@ -117,7 +111,7 @@ This message was submitted through the Aquelious website.
               id="email"
               name="email"
               type="email"
-              placeholder="john@example.com"
+              placeholder="raviji@example.com"
               required
             />
 

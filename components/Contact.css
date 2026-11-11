@@ -1,0 +1,256 @@
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.cta {
+  width: 100%;
+  padding: 110px 0;
+  background: #f1f9fc;
+  color: #10243a;
+}
+
+.cta .container {
+  width: 89%;
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+/* Main layout */
+
+.cta-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: start;
+  gap: 100px;
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.cta-card > div:first-child {
+  padding-top: 15px;
+}
+
+.cta-card h2 {
+  color: #10243a;
+  font-size: clamp(42px, 4.5vw, 65px);
+  font-weight: 780;
+  line-height: 1.07;
+  letter-spacing: -3px;
+  margin: 0 0 25px;
+}
+
+.cta-card > div:first-child > p {
+  max-width: 470px;
+  color: #526c83;
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 0 0 35px;
+}
+
+/* Email action */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 23px;
+
+  color: #0878b5;
+  background: transparent;
+  border: 1px solid #9fc9dd;
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.actions .btn:hover {
+  color: #ffffff;
+  background: #0878b5;
+  border-color: #0878b5;
+}
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+.contact-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  width: 100%;
+  padding: 35px;
+
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid #d4e6ef;
+  border-radius: 8px;
+}
+
+/* Labels */
+
+.contact-panel label {
+  color: #263f56;
+  font-size: 13px;
+  font-weight: 650;
+  margin-top: 8px;
+}
+
+/* Inputs */
+
+.contact-panel input,
+.contact-panel textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 15px 16px;
+
+  color: #10243a;
+  background: #ffffff;
+
+  border: 1px solid #d5e4ec;
+  border-radius: 4px;
+  outline: none;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-panel input {
+  height: 52px;
+}
+
+.contact-panel textarea {
+  min-height: 135px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.contact-panel input::placeholder,
+.contact-panel textarea::placeholder {
+  color: #a0afbb;
+}
+
+/* Focus */
+
+.contact-panel input:focus,
+.contact-panel textarea:focus {
+  border-color: #1685b9;
+  box-shadow: 0 0 0 3px rgba(22, 133, 185, 0.08);
+}
+
+/* Submit */
+
+.contact-panel button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: fit-content;
+  min-width: 175px;
+  height: 52px;
+
+  padding: 0 24px;
+  margin-top: 12px;
+
+  color: #ffffff;
+  background: #0878b5;
+  border: 1px solid #0878b5;
+  border-radius: 4px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 650;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.contact-panel button:hover:not(:disabled) {
+  background: #075f91;
+  border-color: #075f91;
+  transform: translateY(-2px);
+}
+
+.contact-panel button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .cta .container {
+    width: 92%;
+  }
+
+  .cta-card {
+    gap: 45px;
+  }
+
+  .contact-panel {
+    padding: 27px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+  .cta {
+    padding: 75px 0;
+  }
+
+  .cta .container {
+    width: 88%;
+  }
+
+  .cta-card {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .cta-card h2 {
+    font-size: clamp(40px, 10vw, 52px);
+    letter-spacing: -2px;
+  }
+
+  .cta-card > div:first-child > p {
+    font-size: 15px;
+  }
+
+  .contact-panel {
+    padding: 24px 20px;
+  }
+
+  .contact-panel button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-panel {
+    padding: 20px 15px;
+  }
+}

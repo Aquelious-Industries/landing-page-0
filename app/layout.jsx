@@ -1,13 +1,17 @@
+
 import "./globals.css";
+
+import Providers from "@/components/Providers";
 
 import OrganizationSchema from "@/components/seo/OrganizationSchema";
 import WebsiteSchema from "@/components/seo/WebsiteSchema";
 import ProductSchema from "@/components/seo/ProductSchema";
+
 export const metadata = {
   metadataBase: new URL("https://www.aquelious.com"),
 
   title: {
-    default: "Aquelious Industries | AI-Powered Water Intelligence",
+    default: "Aquelious Industries | Building Intelligence Beneath The Surface",
     template: "%s | Aquelious Industries",
   },
 
@@ -38,11 +42,8 @@ export const metadata = {
   ],
 
   creator: "Aquelious Industries",
-
   publisher: "Aquelious Industries",
-
   applicationName: "Aquelious Industries",
-
   category: "Technology",
 
   alternates: {
@@ -72,7 +73,6 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-
     title: "Aquelious Industries",
 
     description:
@@ -104,37 +104,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        />
-
-        <meta
-          name="theme-color"
-          content="#0A0F1C"
-        />
-
-        <meta
-          name="format-detection"
-          content="telephone=no"
-        />
-
-        <link
-          rel="canonical"
-          href="https://www.aquelious.com"
-        />
-      </head>
-
       <body suppressHydrationWarning>
         <OrganizationSchema />
-
         <WebsiteSchema />
-
         <ProductSchema />
-        {children}
+
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
